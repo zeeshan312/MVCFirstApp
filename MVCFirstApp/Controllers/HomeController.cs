@@ -8,11 +8,16 @@ namespace MVCFirstApp.Controllers
 {
     public class HomeController : Controller
     {
+        [OutputCache (Duration =20)]
         public string  Index()
         {
             return "hello  world";
         }
 
+        [OutputCache(Duration =10)]
+        public string GetCurrentTime() {
+            return DateTime.Now.ToString("T");
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
