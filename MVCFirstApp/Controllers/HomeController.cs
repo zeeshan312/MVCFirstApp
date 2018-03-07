@@ -15,7 +15,8 @@ namespace MVCFirstApp.Controllers
         }
 
         [OutputCache(Duration =10)]
-        public string GetCurrentTime() {
+        public string GetCurrentTime()
+        {
             return DateTime.Now.ToString("T");
         }
         public ActionResult About()
@@ -29,6 +30,11 @@ namespace MVCFirstApp.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult MyView()
+        {
             return View();
         }
     }
